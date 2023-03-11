@@ -2,48 +2,10 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <link href="https://raw.githubusercontent.com/Paulohr7/mega-sena/main/style.css" type="text/css rel="stylesheet" />
+    <script scr="https://raw.githubusercontent.com/Paulohr7/mega-sena/main/script.js"></script>                                                                                          
     <title>Sorteio da Mega Sena</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-      }
-      
-      h1 {
-        text-align: center;
-      }
-      
-      .container {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      }
-      
-      .numeros-sorteados {
-        font-size: 1.2rem;
-        text-align: center;
-        margin-bottom: 20px;
-      }
-      
-      button {
-        display: block;
-        margin: 0 auto;
-        background-color: #4CAF50;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-      
-      button:hover {
-        background-color: #3e8e41;
-      }
-    </style>
+   
   </head>
   <body>
     <div class="container">
@@ -51,33 +13,5 @@
       <div class="numeros-sorteados" id="numeros-sorteados"></div>
       <button onclick="sortear()">Sortear</button>
     </div>
-    
-    <script>
-      // função para sortear números aleatórios
-      function sorteio() {
-        return Math.floor(Math.random() * 60) + 1;
-      }
-
-      // função para realizar o sorteio da Mega Sena
-      function sortear() {
-        // array para armazenar os números sorteados
-        let numerosSorteados = [];
-
-        // realiza o sorteio de 6 números únicos
-        while (numerosSorteados.length < 6) {
-          let numeroSorteado = sorteio();
-          if (!numerosSorteados.includes(numeroSorteado)) {
-            numerosSorteados.push(numeroSorteado);
-          }
-        }
-
-        // ordena os números sorteados em ordem crescente
-        numerosSorteados.sort(function(a, b){return a-b});
-
-        // exibe os números sorteados na tela
-        let numerosSorteadosElement = document.getElementById("numeros-sorteados");
-        numerosSorteadosElement.innerHTML = "Os números sorteados foram: " + numerosSorteados.join(", ");
-      }
-    </script>
-  </body>
+      </body>
 </html>
